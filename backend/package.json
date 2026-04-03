@@ -1,0 +1,42 @@
+{
+  "name": "safe-n-core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:migrate": "sequelize-cli db:migrate",
+    "db:migrate:undo": "sequelize-cli db:migrate:undo",
+    "db:generate:model": "sequelize-cli model:generate",
+    "postdb:generate:model": "node scripts/rename-to-cjs.js",
+    "db:generate:migration": "sequelize-cli migration:generate --name",
+    "postdb:generate:migration": "node scripts/rename-to-cjs.js",
+    "dev": "nodemon ./src/server.js",
+    "start": "node ./src/server.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.25.0",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.10.1",
+    "pg": "^8.18.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.7",
+    "uuid": "^13.0.0",
+    "ws": "^8.19.0"
+  },
+  "devDependencies": {
+    "inquirer": "^13.3.0",
+    "nodemon": "^3.1.11",
+    "sequelize-cli": "^6.6.5"
+  }
+}
